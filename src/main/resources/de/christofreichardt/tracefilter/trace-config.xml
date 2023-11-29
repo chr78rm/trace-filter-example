@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TraceConfig xmlns="http://www.christofreichardt.de/java/tracer">
+    <Pool/>
+    <DefaultTracer class="de.christofreichardt.diagnosis.JDKLoggingRouter"/>
+    <Queue>
+        <Enabled />
+        <Size>3</Size>
+        <TraceLogger name="servlet-tracer-"
+                     class="de.christofreichardt.diagnosis.file.QueueFileTracer">
+            <LogDir>${catalina.base}/logs</LogDir>
+            <AutoFlush>true</AutoFlush>
+            <BufSize>1024</BufSize>
+        </TraceLogger>
+        <Online>true</Online>
+        <DebugLevel>5</DebugLevel>
+    </Queue>
+</TraceConfig>
